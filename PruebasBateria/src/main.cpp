@@ -1,3 +1,49 @@
+/*
+  ---------------------------------------------------------------------
+  Código: Monitor de batería para TinyS3 con salida por UART externa
+  Autor: Luis Pedro González
+
+  Descripción:
+    Este programa mide el voltaje de una batería Li-ion 18650 conectada 
+    directamente al pin VBAT del TinyS3, utilizando el ADC interno 
+    con atenuación de 11 dB para ampliar el rango de entrada.
+
+    Se aplica un factor de calibración empírico (VBAT_SCALE = 13.08)
+    que fue calculado con una batería real midiendo 3.93 V y lectura 
+    ADC cruda de 1230. El voltaje resultante se interpreta en función 
+    de los umbrales reales típicos de operación de baterías 18650.
+
+    Además, se detecta si el USB está conectado leyendo el pin VBUS_SENSE
+    (GPIO33) y se envía el estado por:
+      - Serial USB (si está conectado)
+      - UART externa (por GPIO2 TX y GPIO3 RX) todo el tiempo
+
+    Para recibir la salida UART incluso cuando el USB del TinyS3 está
+    desconectado, se utiliza un módulo FTDI externo o adaptador USB–Serial.
+    Este se conecta así:
+      - GPIO2 (TX) → RX del FTDI
+      - GPIO3 (RX) → TX del FTDI
+      - GND       → GND común con el FTDI
+
+    Clasificación de batería:
+      - ≥ 4.15 V: completamente cargada
+      - 3.95–4.14 V: casi llena
+      - 3.7–3.94 V: carga media
+      - 3.4–3.69 V: baja
+      - 3.0–3.39 V: crítica
+      - < 3.0 V: bajo el límite seguro (debería apagarse o entrar en modo de bajo consumo)
+
+    NOTA:
+    - Este mapeo es necesario porque el ADC del ESP32-S3 solo mide 
+      hasta ~3.6 V con 11 dB de atenuación, mientras que la batería
+      puede estar entre 3.0 y 4.2 V. El divisor resistivo interno del TinyS3
+      ya escala automáticamente el voltaje de batería, por lo que no se 
+      necesita un divisor externo, y el factor VBAT_SCALE corrige esa proporción.
+
+  ---------------------------------------------------------------------
+*/
+
+
 #include <Arduino.h>
 
 // Pines TinyS3
