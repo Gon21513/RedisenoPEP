@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "PruebasCOMS"
+		},
+		{
+			"name": "Pruebas_Servos",
+			"path": "Pruebas_Servos/Pruebas_Servos"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"cbor.h": "c",
+			"math.h": "c"
+		}
+	}
+}
