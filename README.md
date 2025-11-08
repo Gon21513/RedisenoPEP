@@ -1,6 +1,21 @@
 # Desarrollo de una placa de expansión para los agentes Pololu 3Pi+ que expanda sus capacidades dentro del ecosistema Robotat.
 
-Este trabajo se desarrolló con el objetivo de ampliar las capacidades de los agentes 3Pi+ utilizados en la plataforma de pruebas Robotat. Para aumentar las capacidades del agente, se implementó un manipulador serial de 3 grados de libertad, el cual utiliza servomotores como actuadores y contiene un efector final tipo garra. También, se implementó una cámara OpenMV Cam H7 que permite capturar desde el punto del agente un fotograma o una serie de fotogramas, para realizar un livestream del agente mientras realiza otras rutinas o capturar una imagen en un punto clave de la ejecución de una rutina. Por último, se implementó un algoritmo para el estacionamiento automático del agente, el cual permite el retorno del agente a una posición establecida mientras evita los obstáculos en la plataforma, lo que permite automatizar el proceso de pruebas y asegurar un correcto funcionamiento del agente. Estas expansiones y el agente son controlados desde un TinyS3, el cual dota al agente y sus módulos con la capacidad de ser controlado por medio de una conexión WiFi, desde un cliente remoto con la capacidad de expandirse a múltiples lenguajes al utilizar instrucciones sencillas para su control.
+Este trabajo se desarrolló con el objetivo de **ampliar las capacidades de los agentes Pololu 3Pi+** utilizados en la plataforma de pruebas **Robotat**.  
+Para lograrlo, se implementaron distintos módulos de expansión y funciones adicionales que extienden el alcance operativo del agente.
+
+En primer lugar, se integraron **servomotores Feetech FT90M**, los cuales permiten dotar al agente de movimiento adicional y control de orientación en componentes periféricos.  
+Asimismo, se incorporó una **cámara OpenMV Cam H7**, que permite **capturar imágenes o transmitir video en tiempo real** desde la perspectiva del agente. Esta cámara puede utilizarse tanto para realizar un *livestream* durante la ejecución de rutinas como para capturar fotogramas en momentos clave de operación.
+
+Adicionalmente, se desarrolló un **algoritmo de estacionamiento automático** que posibilita el retorno del agente a una posición predefinida, evitando obstáculos en la plataforma. Esta funcionalidad contribuye a la automatización del proceso de pruebas y asegura un funcionamiento consistente del agente.
+
+Todas las expansiones y el propio agente son controlados por un **TinyS3 (ESP32-S3)**, que proporciona comunicación **Wi-Fi** y permite la interacción desde un **cliente remoto**.  
+El sistema fue diseñado para admitir instrucciones simples y extensibles, facilitando la integración con **múltiples lenguajes de programación**.
+
+Este repositorio se basa en y utiliza como punto de partida parte del trabajo original desarrollado por **José Luis Álvarez Pineda**, disponible en el siguiente repositorio:  
+👉 [https://github.com/JoseLuisA-P/Tesis-ESP32-Pololu](https://github.com/JoseLuisA-P/Tesis-ESP32-Pololu)
+
+El presente proyecto **extiende, adapta y optimiza** dicho trabajo para incorporar nuevas funcionalidades orientadas al control modular, la comunicación con cámara, el manejo de servomotores y la automatización de rutinas del agente dentro del entorno Robotat.
+
 
 <center><img src="https://github.com/JoseLuisA-P/Tesis-ESP32-Pololu/blob/main/assets/TitlePic-PhotoRoom.png-PhotoRoom.png?raw=true" width="600" height="600"/></center>
 
