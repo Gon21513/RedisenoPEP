@@ -11,7 +11,9 @@ Todas las expansiones y el propio agente son controlados por un **TinyS3 (ESP32-
 El sistema fue diseñado para admitir instrucciones simples y extensibles, facilitando la integración con **múltiples lenguajes de programación**.
 
 Este repositorio se basa en y utiliza como punto de partida parte del trabajo original desarrollado por **José Luis Álvarez Pineda**, disponible en el siguiente repositorio: 
+[https://github.com/JoseLuisA-P/Tesis-ESP32-Pololu](https://github.com/JoseLuisA-P/Tesis-ESP32-Pololu)
 
+El presente proyecto **extiende, adapta y optimiza** dicho trabajo para incorporar nuevas funcionalidades orientadas al control modular, la comunicación con cámara, el manejo de servomotores y la automatización de rutinas del agente dentro del entorno Robotat.
 <center>
   <img src="https://github.com/Gon21513/RedisenoPEP/blob/main/assets/IMG_4246.jpg?raw=true" width="600" height="600"/>
 </center>
