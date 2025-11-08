@@ -15,7 +15,7 @@ Cada frame de **80×60 píxeles** se recibe por SPI y se almacena en `rx_buffer`
 
 ## Configuración previa
 
-Antes de ejecutar este programa en el **TinyS3**, deben cargarse los dos scripts necesarios para el funcionamiento del sistema de transmisión que se encuentran en la carpta de  ** **[Camara](/Camara)****:
+Antes de ejecutar este programa en el **TinyS3**, deben cargarse los dos scripts necesarios para el funcionamiento del sistema de transmisión que se encuentran en la carpta de **[Camara](/Camara)**:
 
 1. **En la cámara OpenMV Cam H7:**  
    Cargar el script **`openmv_stream.py`** utilizando el entorno oficial **OpenMV IDE [23]**.  
