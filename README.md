@@ -51,6 +51,3 @@ Para ensamblar los módulos y placas utilizados en este trabajo, puede hacer ref
 
 En el proceso de ensamblaje, se incluyen referencias a pruebas creadas para observar el correcto funcionamiento del agente antes de desplegarlo, lo que facilita el diagnóstico durante su ensamblaje.
 
-### Resultados
-
-En este archivo se incluye un listado de enlaces a videos de YouTube sin listar, en estos se puede observar el comportamiento del agente y las diversas pruebas realizadas. Las pruebas realizadas incluyen tanto los modulos de manera individual como la integracion de los multiples modulos operando al mismo tiempo.
