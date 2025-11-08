@@ -23,7 +23,7 @@ Que contiene este repositorio:
 - El firmware utilizado por la placa TinyS3.
 - Los códigos para el control del agente y módulos desde Python.
 - Manual para el ensamble de las placas de expansion y los modulos.
-- Videos de las pruebas para el correcto ensamblaje del agente.
+- Videos del funcionamiento general del sistema.
 - Enlaces a las pruebas y validación del agente.
 
 ### Tabla de contenido:
