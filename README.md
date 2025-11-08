@@ -60,10 +60,7 @@ El repositorio se encuentra organizado en las siguientes carpetas principales:
   Incluye las imágenes de referencia utilizadas dentro de este repositorio y en la documentación del proyecto.
 
 - **[Videos](/Videos)**  
-  Almacena videos que documentan las pruebas de ensamblaje, integración de componentes y funcionamiento general del sistema.
-
-- **[Manufactura](/Manufactura)**  
-  Contiene los archivos necesarios para la **fabricación de las PCBs** y la **impresión 3D** de las piezas diseñadas para este proyecto.
+  Almacena videos que documentan el funcionamiento general del sistema.
 
 - **[ControlCliente](/ControlCliente)**  
   Incluye los scripts desarrollados en **Python** para el control remoto del agente robótico, la comunicación con el TinyS3 y la visualización de datos.
