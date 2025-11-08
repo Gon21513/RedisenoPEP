@@ -30,7 +30,7 @@ Que contiene este repositorio:
 - [Plataforma de trabajo](#Plataforma-de-trabajo)
 - [Estructura del repositorio](#Estructura-del-repositorio)
 - [Como ensamblar los modulos y placas](#Como-ensamblar-los-modulos-y-placas)
-- [Resultados](#Resultados)
+
 
 ### Plataforma de trabajo
 
