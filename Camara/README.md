@@ -1,14 +1,12 @@
-El script presentado en esta carpeta contiene la configuración requerida para el envío bajo demanda de los fotogramas capturados por la cámara. La configuración de la cámara y resolución se pueden modificar acorde a los requerimientos del proyecto para procesar la información necesaria. Se pueden agregar más eventos en el bucle while para que la cámara sea capaz de procesar datos, disminuir la carga en el agente, o realizar un análisis de la imagen y enviar los datos.
+El script presentado en esta carpeta permite configurar el envío bajo demanda de los fotogramas capturados por la cámara OpenMV Cam H7 hacia el microcontrolador TinyS3. La configuración de la cámara (como resolución, formato de imagen o frecuencia de captura) puede modificarse según los requerimientos del proyecto para procesar la información necesaria.
 
-Para poder enviar los datos, se debe utilizar la siguiente estructura:
+Para su funcionamiento, se deben seguir los siguientes pasos:
 
-```python
-if(handshake.value() == 0):
-    envio = sensor.snapshot()
-    cs_pin.low()
-    interface.send(envio)
-    cs_pin.high()
-```
+Cargar en la cámara el script openmv_stream.py utilizando el entorno oficial OpenMV IDE [23].
+Este es el código que se graba directamente en la cámara y permite capturar las imágenes y enviarlas por el bus SPI al TinyS3.
 
-En esta condición if, se envía el fotograma al agente. Para que esto suceda, el fotograma debe estar en blanco y negro con una resolución de 60x80 bytes. Si se desea enviar otros datos por SPI desde la cámara, se puede modificar este bucle if y enviar la estructura de datos requerida. Sin embargo, esto requiere modificar la función **AskForPicture()** en el firmware del TinyS3 para que reciba el mensaje del tamaño solicitado y lo procese acorde a lo requerido.
+Desde un ordenador, conectarse a la red Wi-Fi generada por el TinyS3 y ejecutar el archivo PruebaCamara.py en un entorno Python, como Visual Studio Code [24] o Thonny [25].
+Este script permite recibir y visualizar en tiempo real el streaming de video enviado por la cámara a través del microcontrolador.
 
+Con esta configuración, el sistema puede transmitir imágenes en resolución 80×60 píxeles en escala de grises, optimizando el uso de memoria y ancho de banda.
+Si se desea enviar otro tipo de datos por SPI, el script puede modificarse para incluir estructuras personalizadas, siempre que se realicen los ajustes correspondientes en la función AskForPicture() del firmware del TinyS3 para procesar los datos recibidos.
